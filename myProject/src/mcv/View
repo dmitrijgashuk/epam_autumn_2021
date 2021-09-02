@@ -1,0 +1,16 @@
+package myJavaProject;
+
+public class View {
+	public static final String GREETINGS =  "Hello, guess the random number from 0 to 100 ";
+	public static final String INPUT_INT_DATA = "Input INT value ";
+	public static final String WRONG_INPUT = "Wrong input! Repeat please! \n"; 
+	public static final String TRUE_INPUT = "Congratulations! Guessed! ";
+	public static final String ATTEMPTS_INPUT = "Number of attempts: ";
+	public static final String RANGE_INPUT = "Range of namber:";
+	public static final String ARRAY_ATTEMPTS = "Attempts:";
+	
+	public void printMessege(String message) {
+		System.out.print(message);
+	}
+
+}
