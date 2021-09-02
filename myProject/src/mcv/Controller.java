@@ -1,4 +1,4 @@
-package myJavaProject;
+package mcv;
 
 import java.util.Scanner;
 
