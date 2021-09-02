@@ -1,0 +1,67 @@
+package myJavaProject;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Model {
+	 
+	public int RAND_MIN = 0;
+	public int RAND_MAX = 100;
+	public int hiddenNamber;
+	private ArrayList<Integer> array = new ArrayList<Integer>();
+	public int attempt = -1;
+	private int rangeMin = RAND_MIN;
+	private int rangeMax = RAND_MAX;
+	
+	public ArrayList<Integer> getArray() {
+		return array;
+	}
+
+	public void setArray(ArrayList<Integer> array) {
+		this.array = array;
+	}
+	 
+	public int getAttempt() {
+		return attempt;
+	}
+
+	public void setAttempt(int attempt) {
+		this.attempt = attempt;
+		array.add(attempt);
+		if(attempt>hiddenNamber) {
+			rangeMax = attempt;
+		}else {
+			rangeMin = attempt;
+		}
+	}
+
+	public int getHiddenNumber() {
+		return hiddenNamber;
+	 }
+
+	public void initHiddenNumber() {
+		this.hiddenNamber = rand(RAND_MIN,RAND_MAX);
+	 }
+	 
+	int rand (int min, int max){ 
+         int diff = max-min;
+         Random rand = new Random();
+         int i = rand.nextInt(diff);
+         i = min+i;
+         return i;
+     }
+     
+     boolean check() {
+    	 if(hiddenNamber != attempt)
+		return false;
+    	 else return true;
+     }
+     
+     String range() {
+    	 return "[ " + rangeMin + " - " + rangeMax + " ]";
+     }
+
+	
+     
+     
+}
